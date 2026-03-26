@@ -1,0 +1,37 @@
+# ============================================================
+# .gitignore — Portfolio-sivusto
+# Mac + VS Code + HTML/CSS
+# ============================================================
+
+
+# --- MAC ---
+.DS_Store                  # Macin automaattisesti luoma piilotettu tiedosto joka kansioon
+.DS_Store?
+._*                        # Macin resurssihaarukkatiedostot
+.Spotlight-V100            # Spotlight-hakuindeksi
+.Trashes                   # Roskakorin tiedostot
+ehtonds/Network Trash Folder
+Temporary Items
+.AppleDouble
+
+
+# --- VS CODE ---
+.vscode/                   # VS Coden asetuskansio — omat editoriasetuksesi, ei muiden asia
+# Poista tämä rivi JOS haluat jakaa tiimiasetukset (esim. suositellut extensionit)
+
+
+# --- RIIPPUVUUDET ---
+node_modules/              # Jos asennat joskus npm-paketteja, ne eivät kuulu repoon
+package-lock.json          # Voit poistaa tämän rivin jos et käytä npm:ää ollenkaan
+
+
+# --- YMPÄRISTÖMUUTTUJAT ---
+.env                       # Salaiset avaimet ja API-tunnukset — EI KOSKAAN repoon
+*.local
+.env.*
+
+
+# --- TILAPÄISTIEDOSTOT ---
+*.log                      # Lokitiedostot
+*.tmp                      # Tilapäistiedostot
+*.temp
