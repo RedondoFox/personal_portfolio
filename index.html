@@ -19,11 +19,6 @@
 </head>
 <body id="top">
 
-    <!-- Theme toggle button — fixed to top-right corner while scrolling -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light theme">
-        ☀ light mode
-    </button>
-
     <main>
         <h1>Hello!</h1>
         <div class="content-wrapper">
@@ -46,7 +41,16 @@
             </div>
             <div class="image-side">
                 <div class="image-container">
-                    <img src="graf/asset.svg" alt="Kuvituskuva" class="standard-img">
+                    <img src="pictures/asset.svg" alt="Kuvituskuva" class="standard-img">
+
+                   <!-- switch-nappi kuvan alle -->
+    <div class="switch-wrap">
+        <span class="switch-label left active" id="label-dark">dark side</span>
+        <div class="track" id="themeToggle">
+            <div class="thumb"></div>
+        </div>
+        <span class="switch-label right" id="label-light">bright side</span>
+    </div>
                 </div>
             </div>
         </div>
@@ -56,27 +60,40 @@
    
     <footer>
         <a href="#top" class="scroll-top">↑ Back to top</a><br><br>
+
+        <!-- Puhekupla no-cookie-tekstille -->
+    <div class="no-cookie-bubble">
+        This site uses no cookies and collects no personal data.
+    </div>
     </footer>
 
     <script>
-        const btn = document.getElementById('themeToggle');
+  const track = document.getElementById('themeToggle');
+const labelDark = document.getElementById('label-dark');
+const labelLight = document.getElementById('label-light');
 
-        // On click: toggle the class and update button label
-        btn.addEventListener('click', () => {
-            document.body.classList.toggle('light-theme');
+function updateLabels(isLight) {
+    if (isLight) {
+        labelDark.classList.remove('active');
+        labelLight.classList.add('active');
+    } else {
+        labelDark.classList.add('active');
+        labelLight.classList.remove('active');
+    }
+}
 
-            const isLight = document.body.classList.contains('light-theme');
-            btn.textContent = isLight ? '☽ dark mode' : '☀ light mode';
+track.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    const isLight = document.body.classList.contains('light-theme');
+    updateLabels(isLight);
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
 
-            // Save preference so it persists on page reload
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        });
-
-        // On page load: restore saved preference (if any)
-        if (localStorage.getItem('theme') === 'light') {
-            document.body.classList.add('light-theme');
-            btn.textContent = '☽ dark mode';
-        }
+// muistetaan teema sivun latautuessa
+if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-theme');
+    updateLabels(true);
+}
     </script>
 
 </body>

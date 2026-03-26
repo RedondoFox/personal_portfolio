@@ -66,9 +66,17 @@ body.light-theme {
 }
 
 html {
-    cursor: url('cursor.png') 20 10, auto;
+    cursor: url('pictures/kur64Asset1.png') 20 10, auto;
+}
+/* vaalea teema — vaalealle taustalle tehty kursori */
+body.light-theme {
+    cursor: url('pictures/kur64Asset1.png') 20 10, auto;
 }
 
+body.light-theme a,
+body.light-theme button {
+    cursor: url('pictures/wAsset 2.png') 20 10, auto;
+}
 
 /* ============================================================
    BODY
@@ -91,7 +99,7 @@ body {
    LINKS
    ============================================================ */
 a, button {
-    cursor: url('cursorrk2.png') 20 10, auto;
+    cursor: url('pictures/wAsset2.png') 20 10, auto;
 }
 
 a {
@@ -186,6 +194,7 @@ h1 {
     width: 100%;
     max-width: 600px;
     margin-bottom: 70px;
+    text-align: center
 }
 
 
@@ -259,29 +268,80 @@ footer {
 
 
 /* ============================================================
-   THEME TOGGLE BUTTON
+  mood button (switch) styles
    ============================================================ */
-.theme-toggle {
-    position: fixed;                        /* Stays visible while scrolling — change to 'static' to place it inline */
-    top: 20px;                              /* Distance from top of viewport */
-    right: 10%;                             /* Aligns with your body margin — change to match if you change body margins */
-
-    padding: 8px 16px;
-    background: var(--toggle-bg);           /* Theme variable */
-    color: var(--toggle-color);             /* Theme variable */
-    border: 1px solid var(--toggle-border); /* Theme variable */
-    font-family: "Victor Mono", monospace;  /* Matches your site font */
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    transition: opacity 0.3s;
-    z-index: 100;                           /* Keeps button above other content */
+.switch-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 16px;
+    font-family: "Victor Mono", monospace;
 }
 
-.theme-toggle:hover {
-    opacity: 0.75;
+.switch-label {
+    font-size: 0.75rem;
+    color: var(--footer-color);
+    min-width: 90px;
+    transition: color 0.3s;
+    letter-spacing: 0.02em;
 }
 
+.switch-label.left { text-align: right; }
+.switch-label.right { text-align: left; }
+.switch-label.active { color: var(--text-color); font-weight: 600; }
+
+.track {
+    width: 56px;
+    height: 28px;
+    border-radius: 14px;
+    border: 1px solid var(--footer-color);
+    background: transparent;
+    position: relative;
+    cursor: url('pictures/cursorrk2.png') 20 10, auto;
+    transition: border-color 0.3s;
+    flex-shrink: 0;
+}
+
+.thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--footer-color);
+    transition: transform 0.3s;
+}
+
+/* kun light-teema on päällä, thumb liikkuu oikealle */
+body.light-theme .thumb {
+    transform: translateX(28px);
+}
+
+.no-cookie-bubble {
+    display: inline-block;
+    position: relative;
+    margin-top: 16px;
+    padding: 8px 14px;
+    border: 1px solid var(--footer-color);
+    color: var(--footer-color);
+    font-size: 0.75rem;
+    border-radius: 16px 16px 16px 4px; /* vasen yläkulma, oikea yläkulma, oikea alakulma, vasen alakulma */
+}
+
+/* puhekuplan häntä */
+.no-cookie-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;       /* negatiivinen arvo siirtää häntää alas kupla alapuolelle */
+    left: 12px;         /* siirtää häntää vasemmalta */
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--footer-color);
+}
 
 /* ============================================================
    MOBILE — max-width: 900px
