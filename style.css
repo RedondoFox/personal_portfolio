@@ -1,0 +1,325 @@
+/* ============================================================
+   THEME VARIABLES
+   Edit values here to change how each theme looks.
+   Dark theme = :root   |   Light theme = body.light-theme
+   ============================================================ */
+
+/* --- DEFAULT (DARK) THEME --- */
+:root {
+    --bg-color: #032A2C;                            /* Page background */
+    --text-color: azure;                            /* Body text */
+    --strong-color: #f9c8c7;                        /* Bold/highlighted text */
+
+    --link-color: #FFA1E1;                          /* Normal link */
+    --link-visited: #f5c05e;                        /* Visited link */
+    --link-hover: #f5c05e;                          /* Link on hover */
+    --link-visited-hover: #FFA1E1;                  /* Visited link on hover */
+
+    --h1-gradient: linear-gradient(90deg, #f5c05e, #FFA1E1, #FF9010); /* "Hello!" heading gradient — three color stops */
+
+    --btn-border: #F8A39D;                          /* Download button border color */
+    --btn-color: #FFA1E1;                           /* Download button text color */
+    --btn-hover-bg: rgba(255, 161, 225, 0.2);       /* Download button hover background */
+
+    --footer-color: #F8A39D;                        /* Footer text and scroll-to-top color */
+    --footer-hover: #f5c05e;                        /* Scroll-to-top hover color */
+
+    --toggle-bg: rgba(255, 255, 255, 0.08);         /* Theme button background */
+    --toggle-color: azure;                          /* Theme button text */
+    --toggle-border: rgba(255, 255, 255, 0.2);      /* Theme button border */
+}
+
+/* --- LIGHT THEME --- */
+/* These values override :root when <body> has class "light-theme" */
+body.light-theme {
+    --bg-color: #F5F0E8;                            /* Page background — try #FFFFFF for pure white */
+    --text-color: #1a1a1a;                          /* Body text — dark on light */
+    --strong-color: #8B2252;                        /* Bold/highlighted text — deep rose */
+
+    --link-color: #C0006A;                          /* Normal link */
+    --link-visited: #B07800;                        /* Visited link */
+    --link-hover: #B07800;                          /* Link on hover */
+    --link-visited-hover: #C0006A;                  /* Visited link on hover */
+
+    --h1-gradient: linear-gradient(90deg, #C88000, #C0006A, #E05000); /* "Hello!" heading gradient in light mode */
+
+    --btn-border: #C0006A;                          /* Download button border */
+    --btn-color: #C0006A;                           /* Download button text */
+    --btn-hover-bg: rgba(192, 0, 106, 0.1);         /* Download button hover background */
+
+    --footer-color: #8B4040;                        /* Footer text and scroll-to-top color */
+    --footer-hover: #B07800;                        /* Scroll-to-top hover color */
+
+    --toggle-bg: rgba(0, 0, 0, 0.06);              /* Theme button background */
+    --toggle-color: #1a1a1a;                        /* Theme button text */
+    --toggle-border: rgba(0, 0, 0, 0.15);           /* Theme button border */
+}
+
+
+/* ============================================================
+   BASE RESET
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    cursor: url('cursor.png') 20 10, auto;
+}
+
+
+/* ============================================================
+   BODY
+   ============================================================ */
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+    min-height: 100vh;
+    background-color: var(--bg-color);      /* Theme variable — dark: #032A2C, light: #F5F0E8 */
+    color: var(--text-color);               /* Theme variable — dark: azure, light: #1a1a1a */
+    font-family: "Victor Mono", monospace;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.4s ease, color 0.4s ease; /* Smooth theme switch — remove this line to make it instant */
+}
+
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+a, button {
+    cursor: url('cursorrk2.png') 20 10, auto;
+}
+
+a {
+    color: var(--link-color);               /* Theme variable */
+    text-decoration: none;
+    transition: 0.2s;
+    text-underline-offset: 4px;
+}
+
+a:visited {
+    color: var(--link-visited);             /* Theme variable */
+}
+
+a:hover {
+    color: var(--link-hover);               /* Theme variable */
+    text-decoration: none;
+}
+
+a:visited:hover {
+    color: var(--link-visited-hover);       /* Theme variable */
+}
+
+
+/* ============================================================
+   MAIN & HEADING
+   ============================================================ */
+main {
+    flex: 1;
+    padding-top: 40px;
+    width: 100%;
+}
+
+h1 {
+    font-family: "burghi-variable", sans-serif;
+    font-variation-settings: "opsz" 20;
+    font-size: 25vw;
+    text-align: center;
+    background: var(--h1-gradient);         /* Theme variable — gradient changes between themes */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: block;
+    line-height: 1.1;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+
+/* ============================================================
+   CONTENT LAYOUT
+   ============================================================ */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 60px;
+}
+
+.text-side {
+    flex: 0 0 60%;
+}
+
+.p-container {
+    color: var(--text-color);               /* Theme variable */
+    line-height: 1.5;
+    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    letter-spacing: 0.01em;
+    max-width: 75ch;
+    margin-bottom: 70px;
+}
+
+.p-container p {
+    margin-bottom: 1.5em;
+}
+
+.p-container strong {
+    font-weight: 600;
+    color: var(--strong-color);             /* Theme variable — dark: #f9c8c7, light: #8B2252 */
+    font-size: 1.1em;
+    letter-spacing: -0.01em;
+    display: inline-block;
+    line-height: 1;
+}
+
+.image-side {
+    flex: 0 0 35%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 70px;
+}
+
+
+/* ============================================================
+   DOWNLOAD BUTTON
+   ============================================================ */
+.download-section {
+    margin-top: 150px;
+    margin-bottom: 10px;
+}
+
+.btn-download {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid var(--btn-border);    /* Theme variable */
+    color: var(--btn-color);               /* Theme variable */
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    opacity: 1;
+}
+
+.btn-download:hover {
+    color: var(--btn-color);               /* Theme variable */
+    background: var(--btn-hover-bg);       /* Theme variable */
+    text-decoration: none;
+}
+
+.btn-download:visited {
+    color: var(--btn-color);               /* Theme variable */
+}
+
+.btn-download:visited:hover {
+    color: var(--btn-color);               /* Theme variable */
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+    padding: 30px 0 40px 0;
+}
+
+.footer-copy {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: var(--footer-color);            /* Theme variable */
+}
+
+.scroll-top {
+    text-decoration: none;
+    color: var(--footer-color);            /* Theme variable */
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.scroll-top:hover {
+    color: var(--footer-hover);            /* Theme variable */
+}
+
+.scroll-top:visited {
+    color: var(--footer-color);            /* Theme variable */
+}
+
+.scroll-top:visited:hover {
+    color: var(--footer-hover);            /* Theme variable */
+}
+
+
+/* ============================================================
+   THEME TOGGLE BUTTON
+   ============================================================ */
+.theme-toggle {
+    position: fixed;                        /* Stays visible while scrolling — change to 'static' to place it inline */
+    top: 20px;                              /* Distance from top of viewport */
+    right: 10%;                             /* Aligns with your body margin — change to match if you change body margins */
+
+    padding: 8px 16px;
+    background: var(--toggle-bg);           /* Theme variable */
+    color: var(--toggle-color);             /* Theme variable */
+    border: 1px solid var(--toggle-border); /* Theme variable */
+    font-family: "Victor Mono", monospace;  /* Matches your site font */
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: opacity 0.3s;
+    z-index: 100;                           /* Keeps button above other content */
+}
+
+.theme-toggle:hover {
+    opacity: 0.75;
+}
+
+
+/* ============================================================
+   MOBILE — max-width: 900px
+   ============================================================ */
+@media screen and (max-width: 900px) {
+    body {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .theme-toggle {
+        right: 5%;                          /* Matches mobile body margin */
+    }
+
+    .content-wrapper {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .text-side {
+        flex: none !important;
+        width: 100% !important;
+    }
+
+    .image-side {
+        flex: none !important;
+        width: 100% !important;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .p-container {
+        font-size: 1rem;
+        text-align: left;
+        margin-bottom: 40px;
+    }
+
+    .image-container {
+        max-width: 80%;
+    }
+}

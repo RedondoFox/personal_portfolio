@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer.Enabler.Connector.</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://use.typekit.net/sty4egn.css">
+    
+    <link rel="icon" type="image/png" href="favicon16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="favicon32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon180x180.png" sizes="180x180">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+    <!-- Theme toggle button — fixed to top-right corner while scrolling -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light theme">
+        ☀ light mode
+    </button>
+
+    <main>
+        <h1>Hello!</h1>
+        <div class="content-wrapper">
+            <div class="text-side">
+                <div class="p-container"> 
+                    <p>
+                        I have the <strong>hands of an enabler</strong>. Give me a space to organize, a team to hop into, or a problem to crack, <strong>I'll spot the essentials</strong> and give a little push to function.
+                    </p>
+                    <p>
+                        I've surfed between <strong>design, content creation, and project coordination</strong> — exploring different territories on purpose to see how the pieces fit together and what actually deserves attention. Currently, I'm <strong>digging into software development</strong> to understand the craft and build my own projects along the way.
+                    </p>
+                    <p>
+                        I would love to be <strong>the connector</strong> between creative minds, technical teams, and the customer. I'm at my best <strong>in the middle of projects</strong> where everyone needs to be heard and everything needs to click.
+                    </p>
+                    <p>My site is still evolving and my gallery is on the way, but you can get to know me a little better on <strong><a href="https://www.linkedin.com/in/reettakettunen" target="_blank">LinkedIn.</a></strong> Feel free to <strong>suggest a project</strong> or just say hi!</p>
+                </div>
+                <div class="download-section">
+                    <a href="#" class="btn-download">Portfolio samples coming soon... </a>
+                </div>
+            </div>
+            <div class="image-side">
+                <div class="image-container">
+                    <img src="graf/asset.svg" alt="Kuvituskuva" class="standard-img">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <p class="footer-copy">© 2026 Reetta Kettunen</p>
+   
+    <footer>
+        <a href="#top" class="scroll-top">↑ Back to top</a><br><br>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('themeToggle');
+
+        // On click: toggle the class and update button label
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+
+            const isLight = document.body.classList.contains('light-theme');
+            btn.textContent = isLight ? '☽ dark mode' : '☀ light mode';
+
+            // Save preference so it persists on page reload
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+
+        // On page load: restore saved preference (if any)
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-theme');
+            btn.textContent = '☽ dark mode';
+        }
+    </script>
+
+</body>
+</html>
