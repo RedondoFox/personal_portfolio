@@ -29,14 +29,14 @@
     </nav>
 
     <main>
-
+ 
         <!-- =============================================
              HERO SECTION
              ============================================= -->
         <section id="hero" aria-label="Hero">
             <h1>Hello!</h1>
 
-            <!-- Teeman vaihto heti Hello-tekstin alle -->
+            <!-- Teeman vaihto -->
             <div class="switch-wrap">
                 <span class="switch-label left active" id="label-dark">jump to the dark side</span>
                 <div class="track" id="themeToggle">
@@ -47,12 +47,10 @@
 
             <!-- About-teksti toggle-napin alla -->
             <div class="hero-about" id="about">
-                <h2 class="about-heading">About</h2>
+        
                 <div class="p-container">
                     <p>
                         I have the <strong>hands of an enabler</strong>. Give me a space to organize, a team to hop into, or a problem to crack, <strong>I'll spot the essentials</strong> and give a little push to function.
-                    </p>
-                    <p>
                         I've surfed between <strong>design, content creation, and project coordination</strong> — exploring different territories on purpose to see how the pieces fit together and what actually deserves attention. Currently, I'm <strong>digging into software development</strong> to understand the craft and build my own projects along the way.
                     </p>
                 </div>
@@ -63,30 +61,26 @@
              VISUALS SECTION
              ============================================= -->
         <section id="visuals" aria-labelledby="visuals-heading">
-            <h2 class="sr-only" id="visuals-heading">Visuals</h2>
+            <h2 class="visuals-heading" id="visuals-heading">Visuals</h2>
 
             <div class="visuals-row">
 
                 <!-- LEFT: descriptive text -->
                 <div class="visuals-text">
-                    <p class="visuals-label">Selected works</p>
+                   
                     <p>
                         A collection of projects from across my territories — design, content, and coordination. Each piece reflects a different side of how I work and what I pay attention to.
                     </p>
 
-                    <div class="download-section">
-                        <a href="introduction.pdf" class="btn-download" download aria-label="Download Introduction PDF">
-                            &#8595; Download Introduction PDF
-                        </a>
-                    </div>
+                    
                 </div>
 
-                <!-- RIGHT: asset.svg as CTA link to favourite works -->
+                <!-- asset.svg as CTA link to favourite works -->
                 <div class="visuals-image">
                     <a href="works.html" aria-label="View my favourite projects">
                         <img
                             src="pictures/asset.svg"
-                            alt="suosikki projektini"
+                            alt="suosikkiprojektini"
                             class="standard-img"
                         >
                     </a>
@@ -95,7 +89,7 @@
             </div>
         </section>
 
-    </main>
+    
 
     <!-- =============================================
          CONTACT SECTION
@@ -113,18 +107,33 @@
             <a href="https://www.linkedin.com/in/reettakettunen" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Visit LinkedIn profile">
                 LinkedIn
             </a>
+
+          
+        </div>
+ 
+    
+        <div class="download-section">
+        
+            <a href="introduction.pdf" class="btn-download" download aria-label="Download Introduction PDF">
+                            &#8595; Download Introduction PDF
+                        </a>
         </div>
 
+       
+
+        <div><p class="footer-copy">&#169; 2026 Reetta Kettunen</p></div>
+        
+        
         <div class="no-cookie-bubble">
             This site uses no cookies and collects no personal data.
         </div>
 
-        <p class="footer-copy">&#169; 2026 Reetta Kettunen</p>
 
         <a href="#top" class="scroll-top">&#8593; Back to top</a>
+       
 
     </section>
-
+</main>
     <script>
         const track      = document.getElementById('themeToggle');
         const labelDark  = document.getElementById('label-dark');
