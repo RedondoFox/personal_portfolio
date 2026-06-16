@@ -23,17 +23,17 @@
          FLOATING BOTTOM NAVIGATION
          ============================================= -->
     <nav class="bottom-nav" aria-label="Main navigation">
-        <a href="#hero"   class="bottom-nav__link">About me</a>
-        <a href="#visuals" class="bottom-nav__link">Visual style</a>
-        <a href="#contact" class="bottom-nav__link">Lets connect!</a>
+         <a href="index.html#about"   class="bottom-nav__link">About</a>
+        <a href="index.html#visuals" class="bottom-nav__link">Visuals</a>
+        <a href="works.html" class="bottom-nav__link">My work</a>
+        <a href="index.html#contact" 
+        class="bottom-nav__link">Contact</a>
     </nav>
 
     <main>
  
-        <!-- =============================================
-             HERO SECTION
-             ============================================= -->
-        <section id="hero" aria-label="Hero">
+  
+        <header>
             <h1>Hello!</h1>
 
             <!-- Teeman vaihto -->
@@ -46,17 +46,17 @@
             </div>
 
             <!-- About-teksti toggle-napin alla -->
-            <div class="hero-about" id="about">
-        
+            <div class="about" id="about">
                 <div class="p-container">
                     <p>
-                        <span><strong>My name is Reetta and I have the hands of an enabler.</strong> </span> <br> Give me a space to organize, a team to hop into, or a 
+                        <span><strong>My name is Reetta and I have the hands of an enabler.</strong> </span> Give me a space to organize, a team to hop into, or a 
                         problem to crack; I'll spot the essentials and give a little push to get them moving.
                         I've surfed between content creation, design and project coordination
                         and explored different territories on purpose to see how the pieces fit together and what actually deserves attention. Currently I'm digging into software development to understand the craft and build my own projects along the way. Scroll down to explore.
                     </p>
                 </div>
-                
+        </header>
+
                 <div class="scroll-arrow-container">
                         <p class="nuoli-alas">&#11015;</p>
                 </div>
@@ -64,7 +64,7 @@
             </div>
            
                
-        </section>
+        </header>
  
                     
         <!-- =============================================
@@ -79,9 +79,7 @@
                 <div class="visuals-text">
                    
                     <p>
-                        My style of working is very sensitive and intuitive. Step 1 begins when I look for the essentials and visualise the big picture in my mind. I then explore options and test ideas through mind-mapping, building a few solid suggestions to present to the client and colleagues for feedback.
-        
-                        Step 2 is a phase where the real implementation happens. This step is the most delicious part of the process, and a phase where the client often gets the final light-bulb moment. When the creative solution or direction is decided, my doing-engine gears up and delivers the final product with thoughtful details. <strong> Click the image below to open the page featuring my favourite projects.</strong>
+                        My working style is sensitive and intuitive. I begin by visualizing the big picture and testing ideas to map out feedback-ready proposals. The most delicious part is the implementation phase, where the creative direction clicks and the client gets their light-bulb moment. From there, my doing-engine gears up to deliver the final product, rich with thoughtful details.<strong> Click the image below to open the page featuring my favourite projects.</strong>
                     </p>
 
                     
@@ -109,15 +107,21 @@
          ============================================= -->
     <section id="contact" aria-labelledby="contact-heading">
 
-        <h2 class="contact-heading" id="contact-heading">Let's connect</h2>
+        <h2 class="contact-heading" id="contact-heading">Get in touch</h2>
 
-        <p class="contact-intro">Tell me about your project or just say hi.</p>
+        <p class="contact-intro">I am always open to discussing new projects and what we can create together.<br> Let’s grab a cup (virtual or in person) and chat. If you're still curious, you can also download my introduction PDF below to learn more about my background and way of working. </p>
 
         <div class="contact-links">
-            <a href="mailto:reetta@example.com" class="contact-link" aria-label="Send an email">
+            <a href="mailto:reetta@example.com" class="contact-link" 
+            aria-label="Send an email">
                 Email
             </a>
-            <a href="https://www.linkedin.com/in/reettakettunen" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Visit LinkedIn profile">
+
+            <a href="https://www.linkedin.com/in/reettakettunen" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="contact-link" 
+            aria-label="Visit LinkedIn profile">
                 LinkedIn
             </a>
 
@@ -134,19 +138,29 @@
 
        
 
-        <div><p class="footer-copy">&#169; 2026 Reetta Kettunen</p></div>
+    
         
         
-        <div class="no-cookie-bubble">
-            This site uses no cookies and collects no personal data.
-        </div>
-
-
-        <a href="#top" class="scroll-top">&#8593; Back to top</a>
        
 
+    
+        <a href="#top" class="scroll-top"><strong>&#8593; Back to top</strong></a>
+       
+ <div>
+        <p class="footer-copy">
+            This site uses no cookies and collects no personal data.<br>
+        &#169; 2026 Reetta Kettunen
+        </p>
     </section>
+
+   
+        
+    </div>
 </main>
+
+
+
+
     <script>
         const track      = document.getElementById('themeToggle');
         const labelDark  = document.getElementById('label-dark');
