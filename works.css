@@ -1,0 +1,147 @@
+/* ============================================================
+   WORKS PAGE — LISÄTYYLIT
+   ============================================================ */
+
+.works-hero {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.works-hero h1 {
+    font-size: clamp(5rem, 20vw, 18rem);
+    padding: 10px 0 0 0;
+}
+
+.works-back {
+    font-family: "Victor Mono", monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--footer-color);
+    text-transform: lowercase;
+    transition: color 0.2s;
+}
+
+.works-back:hover   { color: var(--footer-hover); }
+.works-back:visited { color: var(--footer-color); }
+
+.works-intro {
+    max-width: 800px;
+    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+    line-height: 1.6;
+    color: var(--text-color);
+    text-align: center;
+}
+
+
+/* ============================================================
+   3x3 GRID
+   ============================================================ */
+
+.works-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 120px;
+}
+
+.work-item {
+    flex: 0 1 calc(33.333% - 28px);
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.work-item a {
+    display: block;
+    width: 100%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.work-item a:hover {
+    transform: translateY(-4px);
+    opacity: 0.85;
+}
+
+.work-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    background: var(--toggle-bg);
+    border: 1px solid var(--toggle-border);
+}
+
+.work-img-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: var(--toggle-bg);
+    border: 1px solid var(--toggle-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--footer-color);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.work-caption {
+    text-align: center;
+}
+
+.work-title {
+    font-family: "Victor Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--footer-color);
+    margin-bottom: 4px;
+}
+
+.work-desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media screen and (max-width: 786px) {
+    .works-hero {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        gap: 18px;
+    }
+
+    .works-grid {
+        gap: 24px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .work-item {
+        flex: 0 1 calc(50% - 20px);
+        min-width: 140px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .work-item {
+        flex: 0 1 100%;
+    }
+}

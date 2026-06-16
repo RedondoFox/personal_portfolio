@@ -23,9 +23,9 @@
          FLOATING BOTTOM NAVIGATION
          ============================================= -->
     <nav class="bottom-nav" aria-label="Main navigation">
-        <a href="#about"   class="bottom-nav__link">About</a>
-        <a href="#visuals" class="bottom-nav__link">Visuals</a>
-        <a href="#contact" class="bottom-nav__link">Contact</a>
+        <a href="#hero"   class="bottom-nav__link">About me</a>
+        <a href="#visuals" class="bottom-nav__link">Visual style</a>
+        <a href="#contact" class="bottom-nav__link">Lets connect!</a>
     </nav>
 
     <main>
@@ -38,7 +38,7 @@
 
             <!-- Teeman vaihto -->
             <div class="switch-wrap">
-                <span class="switch-label left active" id="label-dark">jump to the dark side</span>
+                <span class="switch-label left active" id="label-dark">stay in the dark side</span>
                 <div class="track" id="themeToggle">
                     <div class="thumb"></div>
                 </div>
@@ -50,13 +50,23 @@
         
                 <div class="p-container">
                     <p>
-                        I have the <strong>hands of an enabler</strong>. Give me a space to organize, a team to hop into, or a problem to crack, <strong>I'll spot the essentials</strong> and give a little push to function.
-                        I've surfed between <strong>design, content creation, and project coordination</strong> — exploring different territories on purpose to see how the pieces fit together and what actually deserves attention. Currently, I'm <strong>digging into software development</strong> to understand the craft and build my own projects along the way.
+                        <span><strong>My name is Reetta and I have the hands of an enabler.</strong> </span> <br> Give me a space to organize, a team to hop into, or a 
+                        problem to crack; I'll spot the essentials and give a little push to get them moving.
+                        I've surfed between content creation, design and project coordination
+                        and explored different territories on purpose to see how the pieces fit together and what actually deserves attention. Currently I'm digging into software development to understand the craft and build my own projects along the way. Scroll down to explore.
                     </p>
                 </div>
-            </div>
-        </section>
+                
+                <div class="scroll-arrow-container">
+                        <p class="nuoli-alas">&#11015;</p>
+                </div>
 
+            </div>
+           
+               
+        </section>
+ 
+                    
         <!-- =============================================
              VISUALS SECTION
              ============================================= -->
@@ -65,11 +75,13 @@
 
             <div class="visuals-row">
 
-                <!-- LEFT: descriptive text -->
+                
                 <div class="visuals-text">
                    
                     <p>
-                        A collection of projects from across my territories — design, content, and coordination. Each piece reflects a different side of how I work and what I pay attention to.
+                        My style of working is very sensitive and intuitive. Step 1 begins when I look for the essentials and visualise the big picture in my mind. I then explore options and test ideas through mind-mapping, building a few solid suggestions to present to the client and colleagues for feedback.
+        
+                        Step 2 is a phase where the real implementation happens. This step is the most delicious part of the process, and a phase where the client often gets the final light-bulb moment. When the creative solution or direction is decided, my doing-engine gears up and delivers the final product with thoughtful details. <strong> Click the image below to open the page featuring my favourite projects.</strong>
                     </p>
 
                     
@@ -84,9 +96,10 @@
                             class="standard-img"
                         >
                     </a>
-                </div>
+                 
 
             </div>
+               
         </section>
 
     
@@ -157,7 +170,7 @@
         });
 
         // Muistetaan teema sivun latautuessa
-        if (localStorage.getItem('theme') === 'light') {
+        if (localStorage.getItem('theme') === 'light' && window.innerWidth > 786) {
             document.body.classList.add('light-theme');
             updateLabels(true);
         }

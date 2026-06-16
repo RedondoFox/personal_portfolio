@@ -104,10 +104,12 @@ body {
 
 main {
     width: 90%;
-    max-width: 700px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
+    padding-bottom: 100px;
+
 }
 
 
@@ -145,22 +147,20 @@ a:visited:hover    { color: var(--link-visited-hover); }
 h1 {
     font-family: "burghi-variable", sans-serif;
     font-variation-settings: "opsz" 20;
-    font-size: clamp(6rem, 28vw, 18rem);
+    font-size: clamp(7rem, 28vw, 24rem);
     background: var(--h1-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     line-height: 1.1;
     padding: 10px 0;
+   
 }
 
-#hero .switch-wrap {
-    margin-top: 16px;
-    margin-bottom: 1px;
-}
+
 
 .hero-about {
-    margin-top: 10px;
+    margin-top: 60px;
     width: 100%;
     text-align: center;
 }
@@ -171,31 +171,74 @@ h1 {
    ============================================================ */
 .p-container {
     color: var(--text-color);
-    line-height: 1.5;
-    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    line-height: 1.6;
+    font-size: clamp(0.9rem, 0.8vw, 1.2rem);
     letter-spacing: 0.01em;
-    text-align: left;
+    text-align: center;
 }
 
-.p-container p {
-    margin-bottom: 1.5em;
-}
-
-.p-container strong {
-    font-weight: 600;
-    color: var(--strong-color);
-    font-size: 1.1em;
+strong {
+    font-weight: 800;
     letter-spacing: -0.01em;
-    display: inline-block;
     line-height: 1;
+    background-color: #e9344f43; /* Voit käyttää tässä mitä tahansa teemasi väriä */
+    color: #efeaea; /* Tekstin väri laatikon sisällä (esim. tumma taustaa vasten) */
+    
+    /* Sisäväli (padding) ylhäälle/alas ja sivuille */
+    padding: 10px 10px; 
+    
+    /* Rivikorkeus, jotta rivit eivät liimaudu liikaa toisiinsa */
+    line-height: 0; 
+    
+    /* Tämä määrittää, että padding monistuu jokaisen rivin alkuun ja loppuun */
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone; /* Varmistus Safari-selaimelle */
 }
+
+.scroll-arrow-container {
+  display: flex;
+  justify-content: center; /* Keskittää nuolen vaakasuunnassa */
+  margin-top: 40px;      /* Jättää tilaa tekstin ja nuolen väliin */
+}
+
+.nuoli-alas {
+    display: block;
+    font-size: 2rem;
+    color: var(--strong-color);
+    margin-top: -20px;
+    margin-bottom: 0px;
+    /* 5 sekunnin kokonaisaika pitää lepotauon pitkänä */
+    animation: vain-liike 5s ease-in-out infinite;
+
+}
+
+@keyframes vain-liike {
+  /* Alussa nuoli on paikoillaan */
+  0% {
+    transform: translateY(0);
+  }
+  /* Liukuu tasaisesti alas */
+  20% {
+    transform: translateY(8px);
+  }
+  /* Palaa takaisin ylös alkuperäiseen kohtaan */
+  40% {
+    transform: translateY(0);
+  }
+  /* Pysyy täysin liikkumatta loppuajan (40% - 100%) */
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
 
 
 /* ============================================================
    VISUALS SECTION
    ============================================================ */
 #visuals {
-    padding-top: 10px;
+    padding-top: 0px;
     padding-bottom: 10px;
     scroll-margin-top: 80px;
 }
@@ -214,15 +257,17 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
+    gap: 50px;
 }
 
 .visuals-text {
     width: 100%;
-    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    font-size: clamp(0.9rem, 0.8vw, 1.2rem);
     line-height: 1.6;
     color: var(--text-color);
     text-align: center;
+    line-height: 1.6;
+    
 }
 
 .visuals-label {
@@ -241,12 +286,17 @@ h1 {
 
 .visuals-image > a {
     display: block;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Käytetään filter-ominaisuutta transitionissa box-shadow'n sijaan */
+    transition: transform 0.5s ease, filter 0.5s ease; 
 }
 
 .visuals-image > a:hover {
-    transform: translateY(-4px);
-    opacity: 0.88;
+    /* Suunnetaan kuvaa 8% isommaksi */
+    transform: scale(1.5); 
+    
+    /* drop-shadow hehkuttaa vain kuvan muotoja, ei laatikkoa */
+    /* Muoto: x-siirtymä, y-siirtymä, sumennus, väri 
+    filter: drop-shadow(0 0 50px rgba(229, 144, 224, 0.8));*/
 }
 
 .visuals-image .standard-img {
@@ -254,9 +304,8 @@ h1 {
     max-width: 400px;
     height: auto;
     display: block;
+
 }
-
-
 /* ============================================================
    DOWNLOAD BUTTON
    ============================================================ */
@@ -289,7 +338,10 @@ h1 {
     justify-content: center;
     gap: 14px;
     font-family: "Victor Mono", monospace;
+    margin-top: -50px;
+    margin-bottom: 10px;
 }
+
 
 .switch-label {
     font-size: 0.75rem;
@@ -427,17 +479,17 @@ body.light-theme .thumb {
    ============================================================ */
 .bottom-nav {
     position: fixed;
-    bottom: 30px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
     display: flex;
     align-items: center;
     background: var(--toggle-bg);
-    border: 1px solid var(--toggle-border);
+    border: 10px solid var(--toggle-border);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-radius: 30px;
+    border-radius: 50px;
     padding: 10px 50px;
     white-space: nowrap;
 }
@@ -477,22 +529,26 @@ body.light-theme .thumb {
 
 
 /* ============================================================
-   MOBILE — max-width: 600px
+   MOBILE 
    ============================================================ */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 786px) {
 
     main {
-        width: 92%;
+        width: 80%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #hero {
         min-height: 100svh;
         justify-content: flex-start;
         padding-top: 10vh;
+        padding-bottom: 10px;
     }
 
     h1 {
-        font-size: clamp(4rem, 22vw, 7rem);
+        font-size: clamp(5rem, 22vw, 7rem);
     }
 
     .switch-label {
@@ -501,7 +557,12 @@ body.light-theme .thumb {
     }
 
     .hero-about {
-        margin-top: 24px;
+        margin-top: 40px;
+        
+    }
+
+     .p-container {
+        text-align: center;
     }
 
     .visuals-heading {
@@ -509,12 +570,20 @@ body.light-theme .thumb {
     }
 
     #visuals {
-        padding-top: 24px;
-        padding-bottom: 60px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        align-items: center;
     }
 
     .visuals-image .standard-img {
         max-width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+      .visuals-row {
+        align-items: center;
     }
 
     .contact-heading {
@@ -532,7 +601,7 @@ body.light-theme .thumb {
     }
 
     .bottom-nav {
-        bottom: 16px;
+        bottom: 18px;
         padding: 4px 6px;
     }
 
